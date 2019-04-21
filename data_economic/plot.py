@@ -37,14 +37,6 @@ def create_plot():
         incre1.append(data[str(i)]['A020103'])
         incre2.append(data[str(i)]['A020104'])
         incre3.append(data[str(i)]['A020105'])
-    print("gdp")
-    print(gdp)
-    print('incre1')
-    print(incre1)
-    print('incre2')
-    print(incre2)
-    print('incre3')
-    print(incre3)
 
     # 绘制二十年gdp折线图
     plt.figure(figsize=(16, 4))#设置画布大小

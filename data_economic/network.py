@@ -34,10 +34,7 @@ def get_data_from_network():
     keyvalue['dfwds'] = '[{"wdcode":"sj","valuecode":"LAST20"}]'
     # 再次进行请求
     data = session.post(url, params=keyvalue, headers=headers)
-    # 打印返回过来的状态码及数据
-    print(data.status_code)
     data=json.loads(data.text)
-    print(data)
 
     #返回获得的数据
     return data

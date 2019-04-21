@@ -35,12 +35,6 @@ def create_plot():
     for i in year10:
         city.append(data[str(i)]['A090102'])
         countryside.append(data[str(i)]['A090103'])
-    print("all")
-    print(all)
-    print('city')
-    print(city)
-    print('countryside')
-    print(countryside)
 
     # 绘制二十年居民消费价格指数折线图
     plt.figure(figsize=(16, 4))#设置画布大小

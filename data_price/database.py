@@ -7,7 +7,6 @@ import sqlite3
 def create_database(data):
     # 连接数据库
     conn = sqlite3.connect('Price.db')
-    print("Opened database successfully")
     #创建定位指针
     c = conn.cursor()
     #创建表
@@ -16,7 +15,6 @@ def create_database(data):
     except:
         pass
     c.execute('''CREATE TABLE price(id INT PRIMARY KEY, item TEXT, year TEXT, quantity REAL);''')
-    print("price Table Created!")
 
     #将从网络得到的数据存入数据库
     for i in data["returndata"]["datanodes"]:
@@ -26,7 +24,6 @@ def create_database(data):
                 or i["wds"][0]["valuecode"]=='A090103'):
             c.execute("INSERT INTO price (item,year,quantity) VALUES (?, ?, ?);",
                       (i["wds"][0]["valuecode"], i["wds"][1]["valuecode"], i["data"]["data"]))
-    print("Records created successfully")
 
     #提交操作并关闭数据库
     conn.commit()
